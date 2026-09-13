@@ -5,11 +5,14 @@
  * Each ecosystem project is stored as a JSON file in data/ecosystem/{category}/
  */
 
-/** Category slug - matches directory names in data/ecosystem/ */
+/**
+ * Category slug - matches directory names in data/ecosystem/
+ */
 export type CategorySlug =
   | "client-integrations"
   | "services-endpoints"
   | "infrastructure-tooling"
+  | "facilitators"
   | "learning-community"
   | "skills"
   | "people"
@@ -91,7 +94,8 @@ export const CATEGORIES: CategoryMeta[] = [
     slug: "client-integrations",
     title: "Client-Side Integrations",
     shortTitle: "CLIENT-SIDE",
-    description: "Libraries and SDKs for integrating x402 payments into applications",
+    description:
+      "Libraries and SDKs for integrating x402 payments into applications",
   },
   {
     slug: "services-endpoints",
