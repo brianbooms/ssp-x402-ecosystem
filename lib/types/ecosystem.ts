@@ -3,11 +3,10 @@
  *
  * Type definitions for file-based ecosystem entries.
  * Each ecosystem project is stored as a JSON file in data/ecosystem/{category}/
+ * All content loads at build time via fs.readFileSync + fs.readdirSync.
  */
 
-/**
- * Category slug - matches directory names in data/ecosystem/
- */
+/** Category slug - matches directory names in data/ecosystem/ */
 export type CategorySlug =
   | "client-integrations"
   | "services-endpoints"
@@ -15,11 +14,10 @@ export type CategorySlug =
   | "facilitators"
   | "learning-community"
   | "skills"
-  | "people";
+  | "people"
+  | "agent-loyalty";
 
-/**
- * A single ecosystem entry (e.g., a project, tool, or resource)
- */
+/** A single ecosystem entry (e.g., a project, tool, or resource) */
 export interface EcosystemEntry {
   /** Display name of the project */
   name: string;
@@ -47,9 +45,7 @@ export interface EcosystemEntry {
   tweet_url?: string;
 }
 
-/**
- * Category metadata for display purposes
- */
+/** Category metadata for display purposes */
 export interface CategoryMeta {
   /** URL-friendly slug matching directory name */
   slug: CategorySlug;
@@ -61,51 +57,54 @@ export interface CategoryMeta {
   description: string;
 }
 
-/**
- * All ecosystem categories with display metadata
- */
+/** All categories in display order */
 export const CATEGORIES: CategoryMeta[] = [
-  {
-    slug: "people",
-    title: "People",
-    shortTitle: "PEOPLE",
-    description: "Key builders, contributors, and advocates in the x402 network",
-  },
-  {
-    slug: "skills",
-    title: "Skills",
-    shortTitle: "SKILLS",
-    description: "Installable agent skills for building with x402",
-  },
   {
     slug: "facilitators",
     title: "Facilitators",
     shortTitle: "FACILITATORS",
-    description: "Payment verification and settlement services for x402",
-  },
-  {
-    slug: "learning-community",
-    title: "Learning & Community",
-    shortTitle: "LEARNING",
-    description: "Documentation, tutorials, and community resources",
+    description: "Facilitator services for x402 payment infrastructure",
   },
   {
     slug: "client-integrations",
-    title: "Client-Side Integrations",
-    shortTitle: "CLIENT-SIDE",
-    description:
-      "Libraries and SDKs for integrating x402 payments into applications",
+    title: "Client Integrations",
+    shortTitle: "CLIENTS",
+    description: "Libraries and SDKs for x402 client integration",
   },
   {
     slug: "services-endpoints",
     title: "Services & Endpoints",
     shortTitle: "SERVICES",
-    description: "APIs and services that accept x402 payments",
+    description: "x402-enabled APIs and services",
+  },
+  {
+    slug: "skills",
+    title: "Skills",
+    shortTitle: "SKILLS",
+    description: "AI agent skills for x402 payments and commerce",
+  },
+  {
+    slug: "learning-community",
+    title: "Learning & Community",
+    shortTitle: "LEARN",
+    description: "Docs, guides, communities, and media about x402",
+  },
+  {
+    slug: "people",
+    title: "People",
+    shortTitle: "PEOPLE",
+    description: "Contributors and community members of the x402 ecosystem",
   },
   {
     slug: "infrastructure-tooling",
     title: "Infrastructure & Tooling",
     shortTitle: "INFRASTRUCTURE",
     description: "Tools for building and operating x402-enabled services",
+  },
+  {
+    slug: "agent-loyalty",
+    title: "Agent Loyalty",
+    shortTitle: "LOYALTY",
+    description: "Loyalty and rewards primitives for the agent economy",
   },
 ];
