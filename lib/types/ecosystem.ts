@@ -15,7 +15,8 @@ export type CategorySlug =
   | "facilitators"
   | "learning-community"
   | "skills"
-  | "people";
+  | "people"
+  | "agent-loyalty";
 
 /**
  * A single ecosystem entry (e.g., a project, tool, or resource)
@@ -107,5 +108,11 @@ export const CATEGORIES: CategoryMeta[] = [
     title: "Infrastructure & Tooling",
     shortTitle: "INFRASTRUCTURE",
     description: "Tools for building and operating x402-enabled services",
+  },
+  {
+    slug: "agent-loyalty",
+    title: "Agent Loyalty",
+    shortTitle: "LOYALTY",
+    description: "Loyalty and rewards primitives for the agent economy",
   },
 ];
