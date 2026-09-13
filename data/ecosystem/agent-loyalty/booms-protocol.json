@@ -1,0 +1,7 @@
+{
+  "name": "Booms Protocol",
+  "description": "Open spec for agent loyalty: portable store credit AI agents earn, discover, and apply at checkout without a human account. BSP Draft 0.1 — JWS Compact (Ed25519) signature profile, exactly-once redemption, quote basket-binding. Booms Rewards is the live reference implementation.",
+  "url": "https://brianbooms.com/rewards/protocol/bsp-0.1/",
+  "category": "agent-loyalty",
+  "tags": ["loyalty", "rewards", "agents", "spec"]
+}
